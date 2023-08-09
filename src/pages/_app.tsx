@@ -1,6 +1,24 @@
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
+import { SessionProvider } from 'next-auth/react';
+import { Main, globalStyles } from '@/styles/globals';
+import type { AppProps } from 'next/app';
+import { Nunito_Sans } from 'next/font/google';
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+const nunito = Nunito_Sans({
+  subsets: [],
+  weight: ['400', '700'],
+});
+
+globalStyles();
+
+export default function App({
+  Component,
+  pageProps: { session, ...pageProps },
+}: AppProps) {
+  return (
+    <SessionProvider session={session}>
+      <Main className={nunito.className}>
+        <Component {...pageProps} />
+      </Main>
+    </SessionProvider>
+  );
 }
