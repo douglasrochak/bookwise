@@ -3,11 +3,27 @@ import { AvatarWithInfo } from '../AvatarWithInfo';
 import { Content, PostContainer, PostHeader, Subtitle, Title } from './styles';
 import { Stars } from '../Stars';
 
-export function Post() {
+interface PostProps {
+  userName: string;
+  postTime: string;
+  bookName: string;
+  bookSubtitle: string;
+  bookDescription: string;
+  bookCoverSrc: string;
+}
+
+export function Post({
+  userName,
+  postTime,
+  bookName,
+  bookSubtitle,
+  bookDescription,
+  bookCoverSrc,
+}: PostProps) {
   return (
     <PostContainer>
       <PostHeader>
-        <AvatarWithInfo name='Douglas Rochak' time='Hoje' />
+        <AvatarWithInfo name={userName} time={postTime} />
         <Stars />
       </PostHeader>
       <Content>
@@ -15,18 +31,12 @@ export function Post() {
           alt='livro'
           width={108}
           height={152}
-          src={
-            '/images/books/14-habitos-de-desenvolvedores-altamente-produtivos.png'
-          }
+          src={bookCoverSrc.slice(6).replace('jpg', 'png')}
         />
         <div>
-          <Title>O Hobbit</Title>
-          <Subtitle>J.R.R. Tolkien</Subtitle>
-          <p>
-            Nec tempor nunc in egestas. Euismod nisi eleifend at et in sagittis.
-            Penatibus id vestibulum imperdiet a at imperdiet lectus leo. Sit
-            porta eget nec vitae sit vulputate eget
-          </p>
+          <Title>{bookName}</Title>
+          <Subtitle>{bookSubtitle}</Subtitle>
+          <p>{bookDescription}</p>
         </div>
       </Content>
     </PostContainer>

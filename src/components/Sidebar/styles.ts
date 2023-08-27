@@ -1,13 +1,15 @@
 import { styled } from '@/styles/stitches.config';
-import { Card } from '../styles';
 import sidebarBackground from './sidebar-bg.svg';
 
-export const SidebarContainer = styled(Card, {
+export const SidebarContainer = styled('aside', {
+  position: 'sticky',
+  top: '$5',
   backgroundImage: `url(${sidebarBackground.src})`,
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',
   maxWidth: '14.5rem',
-  height: '100%',
+  width: '100%',
+  height: 'calc(100vh - 2.5rem)',
 
   display: 'flex',
   flexDirection: 'column',
