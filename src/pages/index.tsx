@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { globalStyles } from '@/styles/globals';
-import { Login } from './login/login';
+import Home from './home';
 
 globalStyles();
 
@@ -13,7 +13,7 @@ export default function Page() {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.svg' />
       </Head>
-      <Login />
+      <Home />
     </>
   );
 }
