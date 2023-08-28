@@ -2,11 +2,11 @@ import { Star } from '@phosphor-icons/react';
 import { StartContainer } from './styles';
 
 interface StarsProps {
-  starsNumber: number;
+  rate: number;
 }
 
-export function Stars({ starsNumber }: StarsProps) {
-  const ratings = Array.from({ length: starsNumber });
+export function Stars({ rate }: StarsProps) {
+  const ratings = Array.from({ length: rate });
   const fullFillStars =
     5 - ratings.length > 0 ? Array.from({ length: 5 - ratings.length }) : null;
 

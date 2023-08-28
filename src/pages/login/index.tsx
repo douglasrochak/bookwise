@@ -6,11 +6,11 @@ import {
   IntroImageAndLogo,
   TextBox,
 } from './styles';
-import { AuthButton } from './components/AuthButton';
 import Link from 'next/link';
 import { signIn, useSession } from 'next-auth/react';
+import { AuthButton } from '@/components/AuthButton';
 
-export function Login() {
+export default function Login() {
   const { data: session } = useSession();
   return (
     <HomeContainer>

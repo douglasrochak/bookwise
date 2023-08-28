@@ -4,4 +4,8 @@ export const TitleContainer = styled('span', {
   display: 'flex',
   alignItems: 'center',
   gap: '$3',
+
+  svg: {
+    color: '$green100',
+  },
 });

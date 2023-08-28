@@ -1,3 +1,4 @@
+import { ChartLineUp } from '@phosphor-icons/react';
 import { TitleContainer } from './styles';
 
 interface TitleProps {
@@ -7,7 +8,8 @@ interface TitleProps {
 export function Title({ title }: TitleProps) {
   return (
     <TitleContainer>
-      😀<h2>{title}</h2>
+      <ChartLineUp size={32} />
+      <h2>{title}</h2>
     </TitleContainer>
   );
 }

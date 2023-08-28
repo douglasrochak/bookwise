@@ -26,5 +26,17 @@ export default async function handler(
     return res.status(404).end();
   }
 
-  return res.status(200).json(popularBooks);
+  const popularBooksFormatted = popularBooks.map((item) => {
+    const totalScore = item.ratings.reduce((acc, item) => acc + item.rate, 0);
+    const totalRatings = item.ratings.length;
+
+    const rate = Math.round(totalScore / totalRatings);
+    const newItem = {
+      ...item,
+      rate,
+    };
+    return newItem;
+  });
+
+  return res.status(200).json(popularBooksFormatted);
 }

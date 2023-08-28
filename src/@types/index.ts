@@ -26,6 +26,7 @@ export interface Rating {
 
 export interface PopularBookData extends BookData {
   ratings: Rating;
+  rate: number;
 }
 
 export interface LatestRatingsData {

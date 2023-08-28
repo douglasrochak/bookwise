@@ -4,7 +4,6 @@ import { Stars } from '../Stars';
 import { PopularBookData } from '@/@types';
 
 export function PopularBooksCard(popularBookData: PopularBookData) {
-  console.log(popularBookData);
   return (
     <PopularBooksCardContainer>
       <Image
@@ -18,7 +17,7 @@ export function PopularBooksCard(popularBookData: PopularBookData) {
           <strong>{popularBookData.name}</strong>
           <span>{popularBookData.author}</span>
         </div>
-        <Stars starsNumber={popularBookData.ratings.rate} />
+        <Stars rate={popularBookData.rate} />
       </Content>
     </PopularBooksCardContainer>
   );

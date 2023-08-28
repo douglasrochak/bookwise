@@ -2,41 +2,33 @@ import Image from 'next/image';
 import { AvatarWithInfo } from '../AvatarWithInfo';
 import { Content, PostContainer, PostHeader, Subtitle, Title } from './styles';
 import { Stars } from '../Stars';
+import { LatestRatingsData } from '@/@types';
 
-interface PostProps {
-  userName: string;
-  postTime: string;
-  bookName: string;
-  bookSubtitle: string;
-  bookDescription: string;
-  bookCoverSrc: string;
-}
+interface PostProps extends LatestRatingsData {}
 
-export function Post({
-  userName,
-  postTime,
-  bookName,
-  bookSubtitle,
-  bookDescription,
-  bookCoverSrc,
-}: PostProps) {
+export function Post(postData: PostProps) {
+  console.log(postData);
   return (
     <PostContainer>
       <PostHeader>
-        <AvatarWithInfo name={userName} time={postTime} />
-        <Stars />
+        <AvatarWithInfo
+          image={postData.user.avatar_url}
+          name={postData.user.name}
+          time={postData.created_at}
+        />
+        <Stars rate={postData.rate} />
       </PostHeader>
       <Content>
         <Image
           alt='livro'
           width={108}
           height={152}
-          src={bookCoverSrc.slice(6).replace('jpg', 'png')}
+          src={postData.book.cover_url.slice(6).replace('jpg', 'png')}
         />
         <div>
-          <Title>{bookName}</Title>
-          <Subtitle>{bookSubtitle}</Subtitle>
-          <p>{bookDescription}</p>
+          <Title>{postData.book.name}</Title>
+          <Subtitle>{postData.book.author}</Subtitle>
+          <p>{postData.book.summary}</p>
         </div>
       </Content>
     </PostContainer>

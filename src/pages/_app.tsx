@@ -5,6 +5,8 @@ import { Nunito_Sans } from 'next/font/google';
 import { QueryClientProvider } from 'react-query';
 import { queryClient } from '@/lib/react-query';
 
+import '../lib/dayjs';
+
 const nunito = Nunito_Sans({
   subsets: [],
   weight: ['400', '700'],

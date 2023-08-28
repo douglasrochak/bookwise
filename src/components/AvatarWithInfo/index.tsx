@@ -1,18 +1,22 @@
 import { Avatar } from '../Avatar';
 import { AvatarWithInfoContainer, InfoContainer } from './styles';
+import { timeToNow } from '@/utils/timeFromNow';
 
 interface AvatarWithInfoProps {
   name: string;
   time: string;
+  image: string;
 }
 
-export function AvatarWithInfo({ name, time }: AvatarWithInfoProps) {
+export function AvatarWithInfo({ name, time, image }: AvatarWithInfoProps) {
+  const formattedTime = timeToNow(time);
+
   return (
     <AvatarWithInfoContainer>
-      <Avatar />
+      <Avatar src={image} size='small' />
       <InfoContainer>
         <span>{name}</span>
-        <time>{time}</time>
+        <time>{formattedTime}</time>
       </InfoContainer>
     </AvatarWithInfoContainer>
   );
