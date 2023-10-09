@@ -1,12 +1,12 @@
-import { globalCss } from '@stitches/react';
-import { styled } from './stitches.config';
+import { globalCss } from '@stitches/react'
+import { styled } from './stitches.config'
 
 export const Main = styled('div', {
   height: '100%',
   maxWidth: '1440px',
   margin: '0 auto',
   padding: '$5 0',
-});
+})
 
 export const globalStyles = globalCss({
   '*': {
@@ -19,6 +19,10 @@ export const globalStyles = globalCss({
     backgroundColor: '$gray800',
     color: '$gray100',
     '-webkit-font-smoothing': 'antialiased',
+  },
+
+  a: {
+    textDecoration: 'none',
   },
 
   li: {
@@ -36,4 +40,4 @@ export const globalStyles = globalCss({
       transition: 'background-color .2s',
     },
   },
-});
+})

@@ -1,5 +1,5 @@
-import { styled } from '@/styles/stitches.config';
-import sidebarBackground from './sidebar-bg.svg';
+import { styled } from '@/styles/stitches.config'
+import sidebarBackground from './sidebar-bg.svg'
 
 export const SidebarContainer = styled('aside', {
   position: 'sticky',
@@ -21,7 +21,7 @@ export const SidebarContainer = styled('aside', {
   },
 
   button: {},
-});
+})
 
 export const Navigation = styled('nav', {
   flexGrow: '1',
@@ -42,13 +42,14 @@ export const Navigation = styled('nav', {
   li: {
     padding: '$2',
   },
-});
+})
 
 export const LoginButton = styled('button', {
   display: 'flex',
   alignItems: 'center',
   gap: '0.75rem',
 
+  fontFamily: '$default',
   background: 'none',
   fontWeight: '$bold',
   fontSize: '$md',
@@ -58,4 +59,4 @@ export const LoginButton = styled('button', {
   svg: {
     color: '$green100',
   },
-});
+})

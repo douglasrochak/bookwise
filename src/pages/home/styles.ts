@@ -1,10 +1,10 @@
-import { styled } from '@stitches/react';
+import { styled } from '@stitches/react'
 
 export const HomeContainer = styled('div', {
   marginTop: '4.5rem',
-});
+})
 
-export const Subtitle = styled('div', {});
+export const Subtitle = styled('div', {})
 
 export const Content = styled('div', {
   display: 'grid',
@@ -12,10 +12,4 @@ export const Content = styled('div', {
   gap: '4rem',
 
   marginTop: '$10',
-});
-
-export const PostsWrapper = styled('div', {
-  '& > div + div': {
-    marginTop: '$3',
-  },
-});
+})

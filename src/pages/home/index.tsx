@@ -1,39 +1,41 @@
-import { Content, HomeContainer, PostsWrapper } from './styles';
-import { Post } from '@/components/Post';
-import { PopularBooks } from '@/components/PopularBooks';
-import DefaultLayout from '@/layouts/DefaultLayout';
-import { Title } from '@/components/Title';
-import { api } from '@/lib/axios';
-import { useQuery } from 'react-query';
-import { LatestRatingsData } from '@/@types';
+import { Content, HomeContainer } from './styles'
+import { PopularBooks } from '@/components/PopularBooks'
+import DefaultLayout from '@/layouts/DefaultLayout'
+import { PageTitle } from '@/components/PageTitle'
+import { api } from '@/lib/axios'
+import { useQuery } from 'react-query'
+import { LatestRatingsData } from '@/@types'
+import { LatestRatings } from '@/components/LatestRatings'
+import { LastReading } from '@/components/LastReading'
 
 export default function Home() {
   const { data: latestRatings, isLoading } = useQuery<LatestRatingsData[]>(
     ['latest-ratings'],
     async () => {
-      const { data } = await api.get('/rating/latest');
-      return data;
+      const { data } = await api.get('/rating/latest')
+      return data
     },
     {
       refetchOnWindowFocus: false,
     }
-  );
+  )
 
   return (
     <DefaultLayout>
       <HomeContainer>
-        <Title title='Início' />
+        <PageTitle title='Início' />
         <Content>
-          <PostsWrapper>
-            {isLoading
-              ? 'CARREGANDO'
-              : latestRatings?.map((postData: LatestRatingsData) => (
-                  <Post {...postData} key={postData.id} />
-                ))}
-          </PostsWrapper>
+          <div>
+            <LastReading />
+            {latestRatings ? (
+              <LatestRatings posts={latestRatings} />
+            ) : (
+              'CARREGANDO'
+            )}
+          </div>
           <PopularBooks />
         </Content>
       </HomeContainer>
     </DefaultLayout>
-  );
+  )
 }

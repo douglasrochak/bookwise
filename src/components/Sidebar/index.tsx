@@ -1,7 +1,7 @@
-import Image from 'next/image';
-import { LoginButton, Navigation, SidebarContainer } from './styles';
-import { Binoculars, ChartLineUp, SignIn } from '@phosphor-icons/react';
-import Link from 'next/link';
+import Image from 'next/image'
+import { LoginButton, Navigation, SidebarContainer } from './styles'
+import { Binoculars, ChartLineUp, SignIn } from '@phosphor-icons/react'
+import Link from 'next/link'
 
 export function Sidebar() {
   return (
@@ -25,5 +25,5 @@ export function Sidebar() {
         Fazer Login <SignIn size={20} />
       </LoginButton>
     </SidebarContainer>
-  );
+  )
 }
