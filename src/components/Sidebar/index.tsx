@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { LoginButton, Navigation, SidebarContainer } from './styles'
-import { Binoculars, ChartLineUp, SignIn } from '@phosphor-icons/react'
+import { Binoculars, ChartLineUp, SignIn, User } from '@phosphor-icons/react'
 import Link from 'next/link'
 
 export function Sidebar() {
@@ -17,6 +17,11 @@ export function Sidebar() {
           <Link href={'/explorer'}>
             <li>
               <Binoculars size={24} /> Explorar
+            </li>
+          </Link>
+          <Link href={'/user'}>
+            <li>
+              <User size={24} /> Perfil
             </li>
           </Link>
         </ul>

@@ -10,27 +10,34 @@ export default async function handler(
     return res.status(405).end()
   }
 
+  const { page } = req.query
+
+  if (!page) {
+    return res.status(400).end()
+  }
+
   const books = await prisma.book.findMany({
     include: {
       ratings: true,
     },
+    take: 20,
+    skip: Number(page) * 3,
   })
 
   if (!books) {
     return res.status(404).end()
   }
 
-  const booksAndRate = books.map((item) => {
-    const totalScore = item.ratings.reduce((acc, item) => acc + item.rate, 0)
+  const booksFormatted = books.map((item) => {
     const totalRatings = item.ratings.length
-
+    const totalScore = item.ratings.reduce((acc, item) => acc + item.rate, 0)
     const rate = Math.round(totalScore / totalRatings)
-    const newItem = {
+
+    return {
       ...item,
       rate,
     }
-    return newItem
   })
 
-  return res.status(200).json(booksAndRate)
+  return res.status(200).json(booksFormatted)
 }

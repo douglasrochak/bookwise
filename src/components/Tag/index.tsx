@@ -1,13 +1,14 @@
 import { TagContainer } from './styles'
 
 type Props = {
+  name: string
   active?: boolean
 }
 
-export function Tag({ active = false }: Props) {
+export function Tag({ name, active = false }: Props) {
   return (
     <TagContainer color={active ? 'active' : undefined}>
-      <span>Teste</span>
+      <span>{name}</span>
     </TagContainer>
   )
 }

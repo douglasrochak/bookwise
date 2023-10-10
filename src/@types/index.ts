@@ -5,6 +5,11 @@ export interface UserData {
   created_at: string
 }
 
+export interface TagData {
+  id: string
+  name: string
+}
+
 export interface BookData {
   id: string
   name: string

@@ -16,7 +16,9 @@ export function PageTitle({ title, Icon, withSearchBar = false }: Props) {
         {Icon}
         <h2>{title}</h2>
       </TitleWrapper>
-      {withSearchBar && <SearchBar />}
+      <div style={{ maxWidth: 433, width: '100%' }}>
+        {withSearchBar && <SearchBar placeholder='Buscar livro ou autor' />}
+      </div>
     </TitleContainer>
   )
 }

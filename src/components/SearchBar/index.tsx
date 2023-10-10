@@ -1,10 +1,14 @@
 import { MagnifyingGlass } from '@phosphor-icons/react'
 import { SearchBarContainer, SearchBarInput } from './styles'
 
-export function SearchBar() {
+type Props = {
+  placeholder: string
+}
+
+export function SearchBar({ placeholder }: Props) {
   return (
     <SearchBarContainer>
-      <SearchBarInput type='text' placeholder='Buscar livro ou autor' />
+      <SearchBarInput type='text' placeholder={placeholder} />
       <MagnifyingGlass size={20} />
     </SearchBarContainer>
   )

@@ -2,7 +2,6 @@ import { styled } from '@/styles/stitches.config'
 
 export const SearchBarContainer = styled('div', {
   width: '100%',
-  maxWidth: 433,
 
   display: 'flex',
   alignItems: 'center',

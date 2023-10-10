@@ -1,6 +1,5 @@
 import { Content, HomeContainer } from './styles'
 import { PopularBooks } from '@/components/PopularBooks'
-import DefaultLayout from '@/layouts/DefaultLayout'
 import { PageTitle } from '@/components/PageTitle'
 import { api } from '@/lib/axios'
 import { useQuery } from 'react-query'

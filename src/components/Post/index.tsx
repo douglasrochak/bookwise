@@ -1,13 +1,12 @@
-import Image from 'next/image';
-import { AvatarWithInfo } from '../AvatarWithInfo';
-import { Content, PostContainer, PostHeader, Subtitle, Title } from './styles';
-import { Stars } from '../Stars';
-import { LatestRatingsData } from '@/@types';
+import Image from 'next/image'
+import { AvatarWithInfo } from '../AvatarWithInfo'
+import { Content, PostContainer, PostHeader, Subtitle, Title } from './styles'
+import { Stars } from '../Stars'
+import { LatestRatingsData } from '@/@types'
 
 interface PostProps extends LatestRatingsData {}
 
 export function Post(postData: PostProps) {
-  console.log(postData);
   return (
     <PostContainer>
       <PostHeader>
@@ -32,5 +31,5 @@ export function Post(postData: PostProps) {
         </div>
       </Content>
     </PostContainer>
-  );
+  )
 }
