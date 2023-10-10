@@ -8,6 +8,10 @@ export default async function handler(
 ) {
   const bookId = req.query.id
 
+  if (req.method !== 'GET') {
+    return res.status(405).end()
+  }
+
   if (!bookId || typeof bookId !== 'string') {
     return res.status(400).end()
   }

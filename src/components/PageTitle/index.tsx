@@ -1,15 +1,22 @@
-import { ChartLineUp } from '@phosphor-icons/react'
-import { TitleContainer } from './styles'
+import { ChartLineUp, Icon } from '@phosphor-icons/react'
+import { TitleContainer, TitleWrapper } from './styles'
+import { ReactNode } from 'react'
+import { SearchBar } from '../SearchBar'
 
-interface TitleProps {
+type Props = {
   title: string
+  Icon: ReactNode
+  withSearchBar?: boolean
 }
 
-export function PageTitle({ title }: TitleProps) {
+export function PageTitle({ title, Icon, withSearchBar = false }: Props) {
   return (
     <TitleContainer>
-      <ChartLineUp size={32} />
-      <h2>{title}</h2>
+      <TitleWrapper>
+        {Icon}
+        <h2>{title}</h2>
+      </TitleWrapper>
+      {withSearchBar && <SearchBar />}
     </TitleContainer>
   )
 }

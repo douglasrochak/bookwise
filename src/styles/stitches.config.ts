@@ -17,6 +17,8 @@ export const { styled, getCssText } = createStitches({
       7: '1.75rem',
       8: '2rem',
       10: '2.5rem',
+      11: '2.75rem',
+      12: '3rem',
     },
 
     fontSizes: {
@@ -68,7 +70,7 @@ export const { styled, getCssText } = createStitches({
     radii: {
       xs: '2.5px',
       sm: '4px',
-      md: '10px',
+      md: '8px',
       lg: '20px',
       full: '999px',
     },

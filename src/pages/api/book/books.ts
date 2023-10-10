@@ -10,23 +10,17 @@ export default async function handler(
     return res.status(405).end()
   }
 
-  const popularBooks = await prisma.book.findMany({
-    orderBy: {
-      ratings: {
-        _count: 'desc',
-      },
-    },
+  const books = await prisma.book.findMany({
     include: {
       ratings: true,
     },
-    take: 5,
   })
 
-  if (!popularBooks) {
+  if (!books) {
     return res.status(404).end()
   }
 
-  const popularBooksFormatted = popularBooks.map((item) => {
+  const booksAndRate = books.map((item) => {
     const totalScore = item.ratings.reduce((acc, item) => acc + item.rate, 0)
     const totalRatings = item.ratings.length
 
@@ -38,5 +32,5 @@ export default async function handler(
     return newItem
   })
 
-  return res.status(200).json(popularBooksFormatted)
+  return res.status(200).json(booksAndRate)
 }

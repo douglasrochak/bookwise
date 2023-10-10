@@ -1,4 +1,4 @@
-import { styled } from '@stitches/react';
+import { styled } from '@stitches/react'
 
 export const DefaultLayoutContainer = styled('div', {
   position: 'relative',
@@ -7,7 +7,11 @@ export const DefaultLayoutContainer = styled('div', {
   // height: '95vh',
   gap: '6rem',
 
+  main: {
+    width: '100%',
+  },
+
   aside: {
     width: '100%',
   },
-});
+})

@@ -1,8 +1,10 @@
-import { styled } from '@stitches/react'
+import { styled } from '@/styles/stitches.config'
 
 export const Container = styled('div', {
   display: 'flex',
   justifyContent: 'space-between',
+
+  marginBottom: '$5',
 })
 
 export const LinkStyle = styled('span', {

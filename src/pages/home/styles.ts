@@ -1,8 +1,6 @@
 import { styled } from '@stitches/react'
 
-export const HomeContainer = styled('div', {
-  marginTop: '4.5rem',
-})
+export const HomeContainer = styled('div', {})
 
 export const Subtitle = styled('div', {})
 

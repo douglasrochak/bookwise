@@ -1,7 +1,8 @@
 import { styled } from '@/styles/stitches.config'
 
 export const Card = styled('div', {
-  backgroundColor: '$gray700',
+  display: 'flex',
   borderRadius: '$md',
   padding: '$5 $6',
+  backgroundColor: '$gray700',
 })

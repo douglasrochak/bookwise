@@ -1,14 +1,15 @@
-import { styled } from '@/styles/stitches.config';
-import { Card } from '../styles';
+import { styled } from '@/styles/stitches.config'
+import { Card } from '../@styles'
 
 export const PostContainer = styled(Card, {
+  flexDirection: 'column',
   padding: '$5',
-});
+})
 
 export const PostHeader = styled('div', {
   display: 'flex',
   justifyContent: 'space-between',
-});
+})
 
 export const Content = styled('div', {
   display: 'flex',
@@ -21,15 +22,15 @@ export const Content = styled('div', {
     fontSize: '$sm',
     lineHeight: '$base',
   },
-});
+})
 
 export const Title = styled('h3', {
   color: '$gray100',
   fontSize: '$md',
-});
+})
 
 export const Subtitle = styled('span', {
   color: '$gray400',
   fontSize: '$sm',
   lineHeight: '$base',
-});
+})

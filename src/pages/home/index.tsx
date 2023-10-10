@@ -7,9 +7,10 @@ import { useQuery } from 'react-query'
 import { LatestRatingsData } from '@/@types'
 import { LatestRatings } from '@/components/LatestRatings'
 import { LastReading } from '@/components/LastReading'
+import { ChartLineUp } from '@phosphor-icons/react'
 
 export default function Home() {
-  const { data: latestRatings, isLoading } = useQuery<LatestRatingsData[]>(
+  const { data: latestRatings } = useQuery<LatestRatingsData[]>(
     ['latest-ratings'],
     async () => {
       const { data } = await api.get('/rating/latest')
@@ -21,21 +22,26 @@ export default function Home() {
   )
 
   return (
-    <DefaultLayout>
-      <HomeContainer>
-        <PageTitle title='Início' />
-        <Content>
-          <div>
-            <LastReading />
-            {latestRatings ? (
-              <LatestRatings posts={latestRatings} />
-            ) : (
-              'CARREGANDO'
-            )}
-          </div>
-          <PopularBooks />
-        </Content>
-      </HomeContainer>
-    </DefaultLayout>
+    <HomeContainer>
+      <PageTitle Icon={<ChartLineUp size={32} />} title='Início' />
+      <Content>
+        <div>
+          <LastReading
+            cover_url=''
+            title='teste'
+            subtitle='teste'
+            description='Teste'
+            time='teste'
+            rate={1}
+          />
+          {latestRatings ? (
+            <LatestRatings posts={latestRatings} />
+          ) : (
+            'CARREGANDO'
+          )}
+        </div>
+        <PopularBooks />
+      </Content>
+    </HomeContainer>
   )
 }
